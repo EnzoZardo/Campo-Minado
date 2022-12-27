@@ -21,8 +21,8 @@ Function randint([Int] $min, [Int] $max) {
 
 Function vaziosaoredor([Int] $x, [Int] $y) {
 	$pVerificar = @(@(-1, -1), @(0, -1), @(1, -1),
-					@(-1, 0), @(1, 0), 
-					@(-1, 1), @(0, 1), @(1, 1));
+			@(-1, 0), @(1, 0), 
+			@(-1, 1), @(0, 1), @(1, 1));
 	for ([Int] $i = 0; $i -lt $pVerificar.Count; $i++) {
 		$gridTemp = $grid[$y + $pVerificar[$i][1]][$x + $pVerificar[$i][0]];
 		if ($gridTemp -eq "0" -and $gridScreen[$y + $pVerificar[$i][1]][$x + $pVerificar[$i][0]] -ne "P") {
@@ -228,7 +228,7 @@ Function run {
 	gridscreentostring;
 	while ($rodando) {
 		execute;
-    }
+	}
 }
 
 run;
