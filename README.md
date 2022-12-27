@@ -5,15 +5,15 @@ O jogo foi feito em tempo ocioso com o objetivo de experimentar alguns dos recur
 
 **Obs:** se o tamanho do console for pequeno, é recomendado aumentar o mesmo para não distorcer o campo.
 
-**Especificações de versão: **
+**Especificações de versão:**
 
-Name                           Value
-----                           -----
-PSVersion                      5.1.22621.963
-PSEdition                      Desktop
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-BuildVersion                   10.0.22621.963
-CLRVersion                     4.0.30319.42000
-WSManStackVersion              3.0
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
+| Name | Value |
+| ---- | ----- |
+| PSVersion | 5.1.22621.963 |
+| PSEdition                    |  Desktop |
+| PSCompatibleVersions         |  {1.0, 2.0, 3.0, 4.0...} |
+| BuildVersion                 |  10.0.22621.963 |
+| CLRVersion                   |  4.0.30319.42000 |
+| WSManStackVersion            |  3.0 |
+| SRemotingProtocolVersion     |  2.3 |
+| SerializationVersion         |  1.1.0.1 |
