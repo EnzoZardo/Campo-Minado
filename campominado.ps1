@@ -12,17 +12,27 @@ Function init {
 	$global:target = @(1, 1);
 	$global:ui = (get-host).ui;
 	$global:rui = $ui.rawui;
-	$global:bandeiras = 10;
+	$global:bandeiras = 0;
 }
 
 Function randint([Int] $min, [Int] $max) {
 	return [Random]::New().Next($min, $max);
 }
 
+Function peganumerobombas {
+	foreach ($y in $grid) {
+		foreach ($x in $y) {
+			if ($x -eq "X") {
+				$global:bandeiras++;
+			}
+		}
+	}
+}
+
 Function vaziosaoredor([Int] $x, [Int] $y) {
 	$pVerificar = @(@(-1, -1), @(0, -1), @(1, -1),
-			@(-1, 0), @(1, 0), 
-			@(-1, 1), @(0, 1), @(1, 1));
+					@(-1, 0), @(1, 0), 
+					@(-1, 1), @(0, 1), @(1, 1));
 	for ([Int] $i = 0; $i -lt $pVerificar.Count; $i++) {
 		$gridTemp = $grid[$y + $pVerificar[$i][1]][$x + $pVerificar[$i][0]];
 		if ($gridTemp -eq "0" -and $gridScreen[$y + $pVerificar[$i][1]][$x + $pVerificar[$i][0]] -ne "P") {
@@ -225,10 +235,11 @@ Function run {
 	init;
 	populagrid;
 	filtragrid;
+	peganumerobombas;
 	gridscreentostring;
 	while ($rodando) {
 		execute;
-	}
+    	}
 }
 
 run;
